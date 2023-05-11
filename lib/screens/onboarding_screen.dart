@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:movie_app/components/custom_outline.dart';
 import 'package:movie_app/constants.dart';
+import 'package:movie_app/screens/home_page.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -133,47 +134,57 @@ class OnBoardingScreen extends StatelessWidget {
                   SizedBox(
                     height: screenHight * 0.03,
                   ),
-                  CustomOutline(
-                    //button
-                    strokeWidth: 3,
-                    radius: screenWidth * 20,
-                    padding: const EdgeInsets.all(
-                      3,
-                    ),
-                    gradient: const LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Constants.kPinkColor,
-                        Constants.kGreenColor,
-                      ],
-                    ),
-                    width: 160,
-                    height: 38,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(
-                          20,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
                         ),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Constants.kPinkColor.withOpacity(0.3),
-                            Constants.kGreenColor.withOpacity(0.3),
-                          ],
-                        ),
+                      );
+                    },
+                    child: CustomOutline(
+                      //button
+                      strokeWidth: 3,
+                      radius: screenWidth * 20,
+                      padding: const EdgeInsets.all(
+                        3,
                       ),
-                      child: Center(
-                        child: Text(
-                          'Sign Up',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: screenHight <= 660 ? 11 : 14,
-                            color: Constants.kWhiteColor.withOpacity(
-                              0.8,
+                      gradient: const LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Constants.kPinkColor,
+                          Constants.kGreenColor,
+                        ],
+                      ),
+                      width: 160,
+                      height: 38,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            20,
+                          ),
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Constants.kPinkColor.withOpacity(0.3),
+                              Constants.kGreenColor.withOpacity(0.3),
+                            ],
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Sign Up',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: screenHight <= 660 ? 11 : 14,
+                              color: Constants.kWhiteColor.withOpacity(
+                                0.8,
+                              ),
+                              fontWeight: FontWeight.w700,
                             ),
-                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ),
