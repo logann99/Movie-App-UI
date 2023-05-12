@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/screens/home_page.dart';
+import 'package:movie_app/screens/movie_details.dart';
 import 'package:movie_app/screens/onboarding_screen.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.openSans().fontFamily,
       ),
       // home: const OnBoardingScreen(),
-      home: const HomePage(),
+      home: const MovieDetailScreen(),
     );
   }
 }
